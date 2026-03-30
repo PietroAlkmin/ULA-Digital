@@ -42,7 +42,7 @@ A Unidade é capaz de realizar as seguintes operações matemáticas e lógicas,
 
 O circuito foi desenvolvido valorizando a construção manual e a hierarquia lógica:
 * **Implementação Modular:** A lógica não se limitou a blocos prontos de alto nível do software. A soma e a subtração, por exemplo, foram elaboradas utilizando somadores de completudade (Full-Adders) de 1 bit ligados em cascata.
-* **O Maior Desafio (Divisão por Restauração):** A operação de divisão foi um dos pontos mais complexos, exigindo a criação de uma sub-célula dedicada (`Celula_Div.dig`). Foi projetada a lógica de restauração, onde o sinal de `Cout` do subtrator atua ativamente como o seletor de um Multiplexador. Caso a subtração resulte em um valor negativo, o MUX entra em ação e "restaura" o valor original, garantindo a exatidão do cálculo de resto e quociente.
+* **O Maior Desafio (Divisão por Restauração):** A operação de divisão foi um dos pontos mais complexos, exigindo a criação de uma sub-célula dedicada (`celula_div.dig`). Foi projetada a lógica de restauração, onde o sinal de `Cout` do subtrator atua ativamente como o seletor de um Multiplexador. Caso a subtração resulte em um valor negativo, o MUX entra em ação e "restaura" o valor original, garantindo a exatidão do cálculo de resto e quociente.
 * **Gerenciamento de Barramento:** Outro desafio de arquitetura foi o gerenciamento rígido do barramento de 16 bits resultante da multiplicação, fazendo o split correto para garantir que o **Acumulador (AC)** ficasse responsável pela parte baixa (LSB) e o **MQ** acomodasse a parte alta (MSB), preservando o valor e evitando qualquer overflow indesejado.
 
 ## Como Executar o Projeto
@@ -56,7 +56,7 @@ O circuito foi desenvolvido valorizando a construção manual e a hierarquia ló
    ```
 3. **Execução:**
    - Abra o simulador `Digital`.
-   - Vá em `File > Open` e abra o arquivo principal **`ALU_8bit_Main.dig`** (certifique-se de que os arquivos auxiliares como `Celula_Div.dig` e `Subtrator_8bit.dig` estejam na mesma pasta para evitar erros de dependência).
+   - Vá em `File > Open` e abra o arquivo principal **`ALU.dig`** localizado na pasta `ArquivosDigital` (certifique-se de que de baixar a pasta completa, pois os arquivos auxiliares como `celula_div.dig`, `Subtrator.dig`, `Divisor.dig`, e os outros módulos dependem da mesma pasta para evitar erros).
    - Inicie a simulação (botão play), configure os valores das entradas de dados e altere os 3 pinos de Opcode para testar todas as funcionalidades descritas na tabela.
 
 ## Identificação e Autoria
